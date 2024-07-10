@@ -2,7 +2,6 @@
 using FoodApp.Web.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace FoodApp.Web.Controllers
 {
@@ -24,6 +23,10 @@ namespace FoodApp.Web.Controllers
                 list = JsonConvert.DeserializeObject<List<CouponDTO>>(Convert.ToString(responseDTO.Result));
 
             }
+            else
+            {
+                TempData["error"] = responseDTO?.Message ?? "Something went wrong.";
+            }
 
             return View(list);
         }
@@ -42,8 +45,13 @@ namespace FoodApp.Web.Controllers
                 ResponseDTO? responseDTO = await _couponService.CreateCouponAsync(couponDTO);
                 if (responseDTO != null && responseDTO.IsSuccess)
                 {
+                    TempData["success"] = "Coupon created successfully.";
                     return RedirectToAction(nameof(CouponIndex));
-                }                
+                }
+                else
+                {
+                    TempData["error"] = responseDTO?.Message ?? "Something went wrong.";
+                }
             }
 
             return View(couponDTO);
@@ -58,6 +66,11 @@ namespace FoodApp.Web.Controllers
                 CouponDTO? couponDTO = JsonConvert.DeserializeObject<CouponDTO>(Convert.ToString(responseDTO.Result));
                 return View(couponDTO);
             }
+            else
+            {
+                TempData["error"] = responseDTO?.Message ?? "Something went wrong.";
+            }
+
             return NotFound();
         }
 
@@ -68,7 +81,12 @@ namespace FoodApp.Web.Controllers
             ResponseDTO? responseDTO = await _couponService.DeleteCouponAsync(couponDTO.CouponId);
             if (responseDTO != null && responseDTO.IsSuccess)
             {
+                TempData["success"] = "Coupon deleted successfully.";
                 return RedirectToAction(nameof(CouponIndex));
+            }
+            else
+            {
+                TempData["error"] = responseDTO?.Message ?? "Something went wrong.";
             }
 
             return View(couponDTO);

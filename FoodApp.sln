@@ -5,15 +5,11 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{5D093AC7-4B57-4C40-AE10-B852A4694859}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{E4CA0A6E-6313-40D4-B87B-1897A4FA6EB4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{6549B646-368E-42D8-8654-23E88AD5E560}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6F73B77C-90DC-4CD4-BD85-24581F2FC705}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodApp.Services.CouponAPI", "FoodApp.Services.CouponAPI\FoodApp.Services.CouponAPI.csproj", "{A8FC1D5F-8683-402A-A4A9-EEAD21FC1D43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodApp.Web", "FoodApp.Web\FoodApp.Web.csproj", "{19496B7C-AD82-4D18-B468-968405649D6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodApp.Web", "FoodApp.Web\FoodApp.Web.csproj", "{19496B7C-AD82-4D18-B468-968405649D6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
